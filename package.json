@@ -25,7 +25,8 @@
   },
   "dependencies": {
     "argv-split": "^2.0.1",
-    "probot": "^3.0.2",
+    "probot": "^9.6.3",
+    "probot-actions-adapter": "^1.0.2",
     "ramda": "^0.25.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
