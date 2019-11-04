@@ -1,0 +1,5 @@
+name: 'GitHub Polls Actions Bot'
+description: 'GitHub Action that automatically creates [gh-polls](https://github.com/apex/gh-polls) in GitHub issues'
+runs:
+  using: 'node12'
+  main: 'action.js'
