@@ -7,12 +7,8 @@ const toMarkdown = require('./utils/toMarkdown');
 const { LABEL } = require('./utils/config');
 
 const addPollListener /* : Listener */ = async context => {
-  console.log('context.payload: ', context.payload);
-  const { body, labels } = context.payload.issue;// || context.payload.comment;
+  const { body, labels } = context.payload.issue;
   const [command, argument] /* : [string, string|void] */ = getCommand(body);
-
-  console.log('command: ', command);
-  console.log('argument:', argument);
 
   if (!command || !argument) return;
 
@@ -28,26 +24,13 @@ const addPollListener /* : Listener */ = async context => {
 
     // 3. Update Issue Body
     const markdown = toMarkdown(id)(options);
-    console.log(JSON.stringify(context.payload));
 
-    if (
-      context.payload.comment &&
-      typeof context.payload.comment.id !== 'undefined'
-    ) {
-      await context.github.issues.updateComment({
-        owner: context.payload.repository.owner.login,
-        repo: context.payload.repository.name,
-        comment_id: context.payload.comment.id,
-        body: body.replace(command, markdown),
-      });
-    } else {
-      await context.github.issues.update({
-        owner: context.payload.repository.owner.login,
-        repo: context.payload.repository.name,
-        issue_number: context.payload.issue.number,
-        body: body.replace(command, markdown),
-      });
-    }
+    await context.github.issues.update({
+      owner: context.payload.repository.owner.login,
+      repo: context.payload.repository.name,
+      issue_number: context.payload.issue.number,
+      body: body.replace(command, markdown),
+    });
   } catch (error) {
     console.log(error); // eslint-disable-line
   }
