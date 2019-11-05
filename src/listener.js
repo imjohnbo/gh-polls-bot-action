@@ -10,6 +10,8 @@ const addPollListener /* : Listener */ = async context => {
   const { body, labels } = context.payload.issue;
   const [command, argument] /* : [string, string|void] */ = getCommand(body);
 
+  console.log(command, argument);
+
   if (!command || !argument) return;
 
   try {
