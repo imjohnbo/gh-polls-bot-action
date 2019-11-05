@@ -7,6 +7,7 @@ const toMarkdown = require('./utils/toMarkdown');
 const { LABEL } = require('./utils/config');
 
 const addPollListener /* : Listener */ = async context => {
+  console.log(context.payload);
   const { body, labels } = context.payload.issue || context.payload.comment;
   const [command, argument] /* : [string, string|void] */ = getCommand(body);
 
