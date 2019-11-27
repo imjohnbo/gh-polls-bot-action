@@ -21,8 +21,9 @@ const addPollListener /* : Listener */ = async context => {
     if (!R.any(R.propEq('name', LABEL))(labels)) {
       const issue = context.issue({ labels: [LABEL] });
       await context.github.issues.addLabels({
+        owner: issue.owner,
+        repo: issue.repo,
         issue_number: issue.number,
-        ...issue,
       });
     }
 
