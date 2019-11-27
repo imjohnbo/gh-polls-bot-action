@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# GitHub Polls Actions Bot
+# GitHub Polls Bot Action
 
 > A GitHub ~App built with [Probot](https://github.com/probot/probot)~ Action that automatically creates [gh-polls](https://github.com/apex/gh-polls) in GitHub issues.
 
