@@ -1,10 +1,10 @@
 {
   "name": "gh-polls-bot",
-  "version": "1.0.3",
-  "description": "Automatically create polls in GitHub issues.",
-  "author": "Michael Hsu (徐承志) <evenchange4@gmail.com>",
+  "version": "2.0.1",
+  "description": "Automatically create polls in GitHub issues using GitHub Actions.",
+  "author": "John Bohannon",
   "license": "MIT",
-  "repository": "https://github.com/evenchange4/gh-polls-bot.git",
+  "repository": "https://github.com/imjohnbo/gh-polls-bot-action.git",
   "scripts": {
     "start": "probot run ./src/index.js --port 3000",
     "now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY_BASE64 | base64 -d) npm start",
