@@ -1,6 +1,6 @@
 {
   "name": "gh-polls-bot",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Automatically create polls in GitHub issues using GitHub Actions.",
   "author": "John Bohannon",
   "license": "MIT",
